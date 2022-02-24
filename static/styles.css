@@ -16,8 +16,8 @@ body{
     align-content: center;
     margin-top:3em;
     margin-bottom:6.5em;
-    grid-template-columns: repeat(5, 3.5em);
-    grid-template-rows: repeat(6, 3.5em);
+    grid-template-columns: repeat(5, 5em);
+    grid-template-rows: repeat(6, 4.5em);
     gap:.25em;
 }
 .grid-tile{
@@ -63,10 +63,10 @@ body{
     background:#660000;
 }
 .key.wrong-place{
-    background:#FFC425;
+    background:#b59f3b;
 }
 .key.right-guess{
-    background:#008000;
+    background:#538d4e;
 }
 #delete-icon{
     font-size:1.2em;
