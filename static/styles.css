@@ -10,6 +10,27 @@ body{
     font-family: 'Creepster', cursive;
     text-align: center;
 }
+.wordle-grid{
+    display:grid;
+    justify-content: center;
+    align-content: center;
+    margin-top:3em;
+    margin-bottom:6.5em;
+    grid-template-columns: repeat(5, 3.5em);
+    grid-template-rows: repeat(6, 3.5em);
+    gap:.25em;
+}
+.grid-tile{
+    color:#fff;
+    border: 0.05em solid #242428;
+    font-size: 2em;
+    font-family:'Arial';
+    font-weight:bold;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
 .keyboard{
     display:grid;
     grid-template-columns: repeat(20, minmax(auto, 1.25em));
@@ -19,6 +40,7 @@ body{
 }
 .key{
     font-size:inherit;
+    font-weight:bold;
     grid-column: span 2;
     border:none;
     padding:0;
@@ -32,7 +54,7 @@ body{
     border-radius:.22em;
 }
 .key:hover{
-    filter:brightness(140%);
+    filter:brightness(115%);
 }
 .key.large{
     grid-column:span 3;
@@ -41,10 +63,10 @@ body{
     background:#660000;
 }
 .key.wrong-place{
-
+    background:#FFC425;
 }
-.key-right-guess{
-
+.key.right-guess{
+    background:#008000;
 }
 #delete-icon{
     font-size:1.2em;

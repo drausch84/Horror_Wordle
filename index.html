@@ -28,11 +28,43 @@
         Horror Wordle
     </h1>
     <hr>
+    <div class="wordle-grid">
+        <div class="grid-tile">J</div>
+        <div class="grid-tile">A</div>
+        <div class="grid-tile">S</div>
+        <div class="grid-tile">O</div>
+        <div class="grid-tile">N</div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+        <div class="grid-tile"></div>
+    </div>
     <div class="keyboard">
         <button class="key" data-key="Q">Q</button>
         <button class="key" data-key="W">W</button>
         <button class="key" data-key="E">E</button>
-        <button class="key" data-key="R">R</button>
+        <button class="key wrong-guess" data-key="R">R</button>
         <button class="key" data-key="T">T</button>
         <button class="key" data-key="Y">Y</button>
         <button class="key" data-key="U">U</button>
@@ -41,13 +73,13 @@
         <button class="key" data-key="P">P</button>
         <div class="key-space"></div>
         <button class="key" data-key="A">A</button>
-        <button class="key" data-key="S">S</button>
+        <button class="key wrong-place" data-key="S">S</button>
         <button class="key" data-key="D">D</button>
         <button class="key" data-key="F">F</button>
         <button class="key" data-key="G">G</button>
         <button class="key" data-key="H">H</button>
         <button class="key" data-key="J">J</button>
-        <button class="key" data-key="K">K</button>
+        <button class="key right-guess" data-key="K">K</button>
         <button class="key" data-key="L">L</button>
         <div class="key-space"></div>
         <button data-enter class="key large">ENTER</button>
