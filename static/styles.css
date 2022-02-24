@@ -31,17 +31,20 @@ body{
     user-select: none;
     border-radius:.22em;
 }
+.key:hover{
+    filter:brightness(140%);
+}
 .key.large{
     grid-column:span 3;
 }
 .key.wrong-guess{
-
+    background:#660000;
 }
 .key.wrong-place{
 
 }
 .key-right-guess{
-    
+
 }
 #delete-icon{
     font-size:1.2em;
