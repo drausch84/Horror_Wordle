@@ -1,0 +1,25 @@
+body{
+    background:black;
+}
+.project-header{
+    display:flex;
+    flex-direction: row;
+}
+.logo-img{
+    background:white;
+    height:90px;
+    width:90px;
+    border-radius:50%;
+    margin-top:22px;
+}
+.project-h1{
+    font-size:3em;
+    color: #fff;
+    font-family: 'Creepster', cursive;
+    text-align: center;
+    height:50%;
+    width:50%;
+}
+.delete-icon{
+    color:white;
+}
