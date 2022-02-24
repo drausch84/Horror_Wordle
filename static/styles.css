@@ -31,6 +31,21 @@ body{
     align-items: center;
     user-select: none;
 }
+.grid-tile[data-state="active"]{
+    border-color:#939393;
+}
+.grid-tile[data-state="wrong"]{
+    background:#660000;
+    border:none;
+}
+.grid-tile[data-state="wrong-place"]{
+    background:#b59f3b;
+    border:none;
+}
+.grid-tile[data-state="correct"]{
+    background:#538d4e;
+    border:none;
+}
 .keyboard{
     display:grid;
     grid-template-columns: repeat(20, minmax(auto, 2.3em));

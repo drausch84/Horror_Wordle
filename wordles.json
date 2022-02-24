@@ -1,7 +1,9 @@
 [
     "abyss",
     "alien",
+    "beast",
     "black",
+    "blade",
     "bleak",
     "bleed",
     "blood",
@@ -22,7 +24,6 @@
     "fulci",
     "ghost",
     "ghoul",
-    "ginger",
     "gloom",
     "golem",
     "grave",
@@ -51,6 +52,5 @@
     "stalk",
     "thing",
     "venom",
-    "witch",
-    ""
+    "witch"
 ]
