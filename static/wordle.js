@@ -53,7 +53,7 @@ const wordles = [
     "thing",
     "venom",
     "witch"
-]
+];
 const wordList = [
     "aahed",
     "aalii",
@@ -13077,8 +13077,84 @@ const wordList = [
     "artsy",
     "rural",
     "shave"
-  ]
+  ];
+
+const guessGrid = document.querySelector("[data-guess-grid]");
+
+const WORDLE_LENGTH = 5;
+
+const targetWordle = "";
+
+
+wordGuess();
+
 function wordGuess(){
     document.addEventListener("click", mouseClick);
     document.addEventListener("keydown", keyPress);
+}
+
+function stopWordGuess(){
+    document.removeEventListener("click", mouseClick);
+    document.removeEventListener("keydown", keyPress);
+}
+
+function mouseClick(e){
+    if(e.target.matches("[data-key]")){
+        keySelect(e.target.dataset.key);
+        return;
+    }
+    if(e.target.matches("[data-enter]")){
+        submitGuess();
+        return;
+    }
+    if(e.target.matches("[data-delete]")){
+        deleteLetter();
+        return;
+    }
+}
+
+function keyPress(e){
+    console.log(e);
+    if(e.key.match(/^[a-z]$/)){
+        keySelect(e.key);
+        return;
+   }
+    if(e.key === "Enter"){
+        submitGuess();
+        return;
+    }
+    if(e.key === "Delete" || e.key === "Backspace"){
+        deleteLetter();
+        return;
+    }
+}
+
+function keySelect(key){
+    const numTiles = checkNumTiles();
+    if(numTiles.length >= WORDLE_LENGTH){
+        return;
+    }
+    const nextGuess = guessGrid.querySelector(":not([data-letter])");
+    nextGuess.dataset.letter = key.toLowerCase();
+    nextGuess.textContent = key;
+    nextGuess.dataset.state = "active";
+}
+
+function deleteLetter(){
+    const numTiles = checkNumTiles();
+    const lastLetter = numTiles[numTiles.length - 1];
+    if(lastLetter == null){
+        return;
+    }
+    lastLetter.textContent = "";
+    delete lastLetter.dataset.state;
+    delete lastLetter.dataset.letter;
+}
+
+function submitGuess(){
+
+}
+
+function checkNumTiles(){
+    return guessGrid.querySelectorAll('[data-state="active"]');
 }

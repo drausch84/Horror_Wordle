@@ -4,10 +4,14 @@ body{
     margin:0;
     padding:1em;
 }
+@font-face{
+    font-family: friday13th;
+    src: url(../static/fonts/Friday13SH.ttf);
+}
 .project-h1{
     font-size:4em;
     color: #fff;
-    font-family: 'Creepster', cursive;
+    font-family: friday13th, sans-serif;
     text-align: center;
 }
 .wordle-grid{
@@ -30,6 +34,7 @@ body{
     justify-content: center;
     align-items: center;
     user-select: none;
+    text-transform: uppercase;
 }
 .grid-tile[data-state="active"]{
     border-color:#939393;
@@ -67,6 +72,7 @@ body{
     cursor:pointer;
     user-select: none;
     border-radius:.22em;
+    text-transform: uppercase;
 }
 .key:hover{
     filter:brightness(115%);
