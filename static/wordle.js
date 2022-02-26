@@ -54,6 +54,7 @@ const wordles = [
     "venom",
     "witch"
 ];
+
 const wordList = [
     "aahed",
     "aalii",
@@ -13080,10 +13081,11 @@ const wordList = [
   ];
 
 const guessGrid = document.querySelector("[data-guess-grid]");
+const alertDiv = document.querySelector("[data-alert-container]")
 
 const WORDLE_LENGTH = 5;
 
-const targetWordle = "";
+const targetWordle = wordles[Math.floor(Math.random() * wordles.length)];
 
 
 wordGuess();
@@ -13152,9 +13154,38 @@ function deleteLetter(){
 }
 
 function submitGuess(){
-
+    const numTiles = [...checkNumTiles()]
+    if(numTiles.length !== WORDLE_LENGTH){
+        showAlert("Not long enough! Only " + numTiles.length + " letters entered.");
+        shakeAnimation(numTiles);
+        return;
+    } 
 }
 
 function checkNumTiles(){
     return guessGrid.querySelectorAll('[data-state="active"]');
+}
+
+function showAlert(text, duration = 1000){
+    const alert = document.createElement("div");
+    alert.textContent = text;
+    alert.classList.add("alert");
+    alertDiv.prepend(alert);
+    if(duration != null){
+        setTimeout(function(){
+            alert.classList.add("hide");
+            alert.addEventListener("transitionend", function(){
+                alert.remove();
+            });
+        }, duration);
+    }
+}
+
+function shakeAnimation(tiles){
+    tiles.forEach(tile => {
+        tile.classList.add("shake");
+        tile.addEventListener("animationend", () =>{
+            tile.classList.remove("shake");
+        }, {once: true});
+    })
 }

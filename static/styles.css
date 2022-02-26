@@ -14,6 +14,29 @@ body{
     font-family: friday13th, sans-serif;
     text-align: center;
 }
+.alert-div{
+    position:fixed;
+    top:18vh;
+    left:50vw;
+    transform: translateX(-50%);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+.alert{
+    pointer-events: none;
+    background:#660000;
+    color:#fff;
+    padding:.75em;
+    opacity:1;
+    border-radius:.35em;
+    transition: opacity 500ms ease-in-out;
+    margin-bottom: .3em;
+}
+.alert.hide{
+    opacity:0;
+}
 .wordle-grid{
     display:grid;
     justify-content: center;
@@ -35,6 +58,9 @@ body{
     align-items: center;
     user-select: none;
     text-transform: uppercase;
+}
+.grid-tile.shake{
+    animation: shake 250ms ease-in-out;
 }
 .grid-tile[data-state="active"]{
     border-color:#939393;
