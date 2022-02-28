@@ -13080,13 +13080,12 @@ const wordList = [
     "shave"
   ];
 
+const ANIMATION_DUR = 500;
 const guessGrid = document.querySelector("[data-guess-grid]");
-const alertDiv = document.querySelector("[data-alert-container]")
-
+const alertDiv = document.querySelector("[data-alert-container]");
+const keyboard = document.querySelector("[data-keyboard]");
 const WORDLE_LENGTH = 5;
-
 const targetWordle = wordles[Math.floor(Math.random() * wordles.length)];
-
 
 wordGuess();
 
@@ -13160,6 +13159,18 @@ function submitGuess(){
         shakeAnimation(numTiles);
         return;
     } 
+    const guess = numTiles.reduce((word, gridTile) => {
+        return word + gridTile.dataset.letter
+    }, "");
+    console.log(guess);
+    if(!wordList.includes(guess)){
+        showAlert("Word is not in word list");
+        shakeAnimation(numTiles);
+        return;
+    }
+
+    stopWordGuess();
+    numTiles.forEach((...params) => flipAnimation(...params, guess));
 }
 
 function checkNumTiles(){
@@ -13184,8 +13195,36 @@ function showAlert(text, duration = 1000){
 function shakeAnimation(tiles){
     tiles.forEach(tile => {
         tile.classList.add("shake");
-        tile.addEventListener("animationend", () =>{
+        tile.addEventListener("animationend", () => {
             tile.classList.remove("shake");
         }, {once: true});
+    });
+}
+
+function flipAnimation(gridTile, index, array, guess){
+    const letter = gridTile.dataset.letter;
+    const key = keyboard.querySelector(`[data-key="${letter}"i]`);
+    setTimeout(() => {
+        gridTile.classList.add("flip");
+    }, index * ANIMATION_DUR / 2);
+    gridTile.addEventListener("transitionend", () => {
+        gridTile.classList.remove("flip");
+        if(targetWordle[index] === letter){
+            gridTile.dataset.state = "correct";
+            key.classList.add("right-guess");
+        } else if(targetWordle.includes(letter)){
+            gridTile.dataset.state = "wrong-place";
+            key.classList.add("wrong-place");
+        } else {
+            gridTile.dataset.state = "wrong";
+            key.classList.add("wrong-guess");
+        }
+        if(index === array.length - 1){
+            gridTile.addEventListener("transitionend", () => {
+                wordGuess();
+
+            });
+
+        }
     })
 }

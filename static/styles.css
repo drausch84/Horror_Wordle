@@ -58,9 +58,13 @@ body{
     align-items: center;
     user-select: none;
     text-transform: uppercase;
+    transition: transform 250ms linear;
 }
 .grid-tile.shake{
-    animation: shake 250ms ease-in-out;
+   animation: shake 0.5s ease-in-out;
+}
+.grid-tile.flip{
+    transform: rotateX(90deg);
 }
 .grid-tile[data-state="active"]{
     border-color:#939393;
@@ -118,3 +122,29 @@ body{
 #delete-icon{
     font-size:1.2em;
 }
+
+@keyframes shake {
+    10% {
+      transform: translateX(-5%);
+    }
+  
+    30% {
+      transform: translateX(5%);
+    }
+  
+    50% {
+      transform: translateX(-7.5%);
+    }
+  
+    70% {
+      transform: translateX(7.5%);
+    }
+  
+    90% {
+      transform: translateX(-5%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
