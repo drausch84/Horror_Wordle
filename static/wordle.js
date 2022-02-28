@@ -13192,6 +13192,20 @@ function showAlert(text, duration = 1000){
     }
 }
 
+function winOrLose(guess, tiles){
+    if(guess === targetWordle){
+        showAlert("You Win! Congratulations.", 5000);
+        danceAnimation(tiles);
+        stopWordGuess();
+        return;
+    }
+    const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])");
+    if (remainingTiles.length === 0) {
+    showAlert(targetWordle.toUpperCase(), null);
+    stopWordGuess();
+  }
+}
+
 function shakeAnimation(tiles){
     tiles.forEach(tile => {
         tile.classList.add("shake");
@@ -13222,9 +13236,20 @@ function flipAnimation(gridTile, index, array, guess){
         if(index === array.length - 1){
             gridTile.addEventListener("transitionend", () => {
                 wordGuess();
-
-            });
+                winOrLose(guess, array);
+            }, {once: true});
 
         }
-    })
+    }, {once: true})
+}
+
+function danceAnimation(tiles){
+    tiles.forEach((tile, index) => {
+        setTimeout(() => {
+            tile.classList.add("dance");
+            tile.addEventListener("animationend", () => {
+            tile.classList.remove("dance");
+        }, {once: true});
+        }, index * ANIMATION_DUR / 5)
+    });
 }
