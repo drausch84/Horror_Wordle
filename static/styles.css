@@ -63,7 +63,8 @@ a{
 }
 .alert{
     pointer-events: none;
-    background:#660000;
+    background:#737373;
+    font-size:1.1em;
     color:#fff;
     padding:.75em;
     opacity:1;
