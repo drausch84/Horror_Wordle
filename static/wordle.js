@@ -13,6 +13,7 @@ const wordles = [
     "brain",
     "cabin",
     "carve",
+    "coven",
     "crawl",
     "creep",
     "crypt",
@@ -27,6 +28,7 @@ const wordles = [
     "fangs",
     "fears",
     "flesh",
+    "freak",
     "fulci",
     "ghost",
     "ghoul",
@@ -63,6 +65,7 @@ const wordles = [
     "thing",
     "timid",
     "venom",
+    "weird",
     "witch"
 ];
 
