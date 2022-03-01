@@ -36,6 +36,21 @@ a{
     height:6em;
     width:6em;
 }
+.new-game{
+    align-self: center;
+}
+#restart{
+    font-family: friday13th, sans-serif;
+    background:#660000;
+    color:#fff;
+    font-size:2.4em;
+    margin-bottom:0.5em;
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+    -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+    cursor: pointer;
+    display:none;
+}
 .alert-div{
     position:fixed;
     top:18vh;

@@ -13086,6 +13086,7 @@ const alertDiv = document.querySelector("[data-alert-container]");
 const keyboard = document.querySelector("[data-keyboard]");
 const WORDLE_LENGTH = 5;
 const targetWordle = wordles[Math.floor(Math.random() * wordles.length)];
+const resetBtn = document.getElementById("restart");
 
 wordGuess();
 
@@ -13194,14 +13195,16 @@ function showAlert(text, duration = 1000){
 
 function winOrLose(guess, tiles){
     if(guess === targetWordle){
-        showAlert("You Win! Congratulations.", 5000);
+        showAlert("You Win! Congratulations.", 3000);
         danceAnimation(tiles);
+        resetBtn.style.display = "block";
         stopWordGuess();
         return;
     }
     const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])");
     if (remainingTiles.length === 0) {
     showAlert(targetWordle.toUpperCase(), null);
+    resetBtn.style.display = "block";
     stopWordGuess();
   }
 }
