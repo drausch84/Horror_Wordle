@@ -47,6 +47,7 @@ const wordles = [
     "panic",
     "purge",
     "rabid",
+    "raven",
     "roach",
     "satan",
     "scare",
