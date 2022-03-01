@@ -1,7 +1,9 @@
 [
     "abyss",
+    "agony",
     "alien",
     "attic",
+    "awful",
     "beast",
     "black",
     "blade",
@@ -20,6 +22,7 @@
     "creep",
     "crypt",
     "curse",
+    "dagon",
     "death",
     "decay",
     "demon",
@@ -70,6 +73,7 @@
     "stalk",
     "thing",
     "timid",
+    "troll",
     "venom",
     "weird",
     "witch"

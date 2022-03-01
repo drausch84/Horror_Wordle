@@ -1,7 +1,9 @@
 const wordles = [
     "abyss",
+    "agony",
     "alien",
     "attic",
+    "awful",
     "beast",
     "black",
     "blade",
@@ -20,6 +22,7 @@ const wordles = [
     "creep",
     "crypt",
     "curse",
+    "dagon",
     "death",
     "decay",
     "demon",
@@ -70,6 +73,7 @@ const wordles = [
     "stalk",
     "thing",
     "timid",
+    "troll",
     "venom",
     "weird",
     "witch"
