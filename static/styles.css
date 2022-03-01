@@ -37,7 +37,9 @@ a{
     width:6em;
 }
 .new-game{
-    align-self: center;
+    display:flex;
+    justify-content: center;
+    margin-bottom:1em;
 }
 #restart{
     font-family: friday13th, sans-serif;
@@ -63,11 +65,12 @@ a{
 }
 .alert{
     pointer-events: none;
-    background:#737373;
-    font-size:1.1em;
+    background:#660000;
+    font-size:1.5em;
     color:#fff;
     padding:.75em;
     opacity:1;
+    border:0.05em solid #fff;
     border-radius:.35em;
     transition: opacity 500ms ease-in-out;
     margin-bottom: .3em;
@@ -80,7 +83,7 @@ a{
     justify-content: center;
     align-content: center;
     margin-top:3em;
-    margin-bottom:6.5em;
+    margin-bottom:4.5em;
     grid-template-columns: repeat(5, 5em);
     grid-template-rows: repeat(6, 4.5em);
     gap:.25em;
