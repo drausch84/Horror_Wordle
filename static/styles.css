@@ -127,6 +127,7 @@ a{
     grid-auto-rows: 3.5em;
     gap:.25em;
     justify-content: center;
+    margin-bottom:3em;
 }
 .key{
     font-size:inherit;
