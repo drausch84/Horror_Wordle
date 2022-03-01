@@ -11,6 +11,7 @@ const wordles = [
     "bogey",
     "bones",
     "brain",
+    "brood",
     "cabin",
     "carve",
     "coven",
